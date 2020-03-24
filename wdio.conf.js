@@ -1,4 +1,4 @@
-import * as config from './lib/config'
+const config = require('./lib/config')
 
 exports.config = {
     //
@@ -165,8 +165,9 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    // before: function (capabilities, specs) {
-    // },
+    before: function (capabilities, specs) {
+        require('@babel/register')
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name

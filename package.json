@@ -4,8 +4,8 @@
   "description": "QA Test for getlabor.com.br homepage (Novatics Interview Project)",
   "main": "index.js",
   "scripts": {
-    "test": "wdio wdio.conf.js",
-    "selenium-server": "selenium-standalone  start"
+    "test": " ./node_modules/.bin/wdio wdio.conf.js",
+    "selenium-server": "./node_modules/.bin/selenium-standalone  start"
   },
   "author": "Willian Gulgielmin",
   "license": "ISC",
