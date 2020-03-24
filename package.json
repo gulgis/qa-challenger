@@ -1,15 +1,24 @@
 {
   "name": "qa-challenger",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "QA Test for getlabor.com.br homepage (Novatics Interview Project)",
   "main": "index.js",
   "scripts": {
-    "test": "wdio"
+    "test": "wdio wdio.conf.js",
+    "selenium-server": "selenium-standalone  start"
   },
-  "author": "",
+  "author": "Willian Gulgielmin",
   "license": "ISC",
   "devDependencies": {
+    "@wdio/cli": "^5.22.4",
+    "@wdio/local-runner": "^5.22.4",
+    "@wdio/mocha-framework": "^5.18.7",
+    "@wdio/spec-reporter": "^5.22.4",
+    "@wdio/sync": "^5.20.1",
     "chai": "^4.1.2",
+    "chromedriver": "^80.0.1",
+    "prettier": "2.0.2",
+    "wdio-chromedriver-service": "^5.0.2",
     "wdio-dot-reporter": "0.0.9",
     "wdio-mocha-framework": "^0.6.1",
     "wdio-selenium-standalone-service": "0.0.10",
@@ -18,5 +27,16 @@
   },
   "dependencies": {
     "selenium-standalone": "^6.15.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gulgis/qa-challenger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gulgis/qa-challenger/issues"
+  },
+  "homepage": "https://github.com/gulgis/qa-challenger#readme"
 }
