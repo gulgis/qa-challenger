@@ -167,6 +167,31 @@ exports.config = {
      */
     before: function (capabilities, specs) {
         require('@babel/register')
+
+        browser.addCommand('getMetaData', function() {
+            return {
+                url: this.getUrl(),
+                title: this.getTitle(),
+            }
+        })
+
+        browser.addCommand('waitAndClick', function(selector) {
+            try {
+                $(selector).waitForExist(5000)
+                $(selector).click()
+            } catch (error) {
+                throw new Error('Could not click on selector: ${selector}')
+            }
+        })
+
+        browser.addCommand('waitAndTypeText', function(selector, text) {
+            try {
+                $(selector).waitForExist(5000)
+                $(selector).setValue(text)
+            } catch (error) {
+                throw new Error('Could not type text into selector: ${selector}')
+            }
+        })
     },
     /**
      * Runs before a WebdriverIO command gets executed.
