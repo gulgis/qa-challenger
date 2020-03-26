@@ -4,25 +4,29 @@ class LoginPage extends BasePage{
     
 
     get loginForm(){
-        return $('/html/body/ui-view/login/div/div/main/section/div/main/form')
+        return $('form')
     }
     get  username(){
-        return $('.e4p6sj50')
+        return $('.e4p6sj50').$('name=email')
     }
     get password(){
-        return $('.e4p6sj50')
+        return $('.e4p6sj50').$('name=password')
     }
 
     get submitButton(){
-        return $('')
+        return $('button').$('.e1677wdp0')
     }
 
-    get errorMessage(){
-        return $('')
+    get emptyErrorMessage(){
+        return $('.e4p6sj52=Campo obrigatório')
     }
     
     get forgottenPasswordLink(){
-        return $('')
+        return $('.e1ozijpt0*=Esqueci')
+    }
+
+    get wrongEmailErrorMessage(){
+        return $('.e5387b70=Este email não está cadastrado')
     }
 
     open(){
