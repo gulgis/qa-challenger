@@ -177,7 +177,7 @@ exports.config = {
 
         browser.addCommand('waitAndClick', function(selector) {
             try {
-                $(selector).waitForExist(5000)
+                $(selector).waitForExist(2000)
                 $(selector).click()
             } catch (error) {
                 throw new Error('Could not click on selector: ${selector}')

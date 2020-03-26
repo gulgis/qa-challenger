@@ -7,18 +7,22 @@ class LoginPage extends BasePage{
         return $('form')
     }
     get  username(){
-        return $('.e4p6sj50').$('name=email')
+        return $('.e4p6sj50' )
     }
     get password(){
-        return $('.e4p6sj50').$('name=password')
+        return $('.e4p6sj50')
     }
 
     get submitButton(){
-        return $('button').$('.e1677wdp0')
+        return $('button=Entrar')
+    }
+
+    get submitButtonSend(){
+        return $('button=Enviar')
     }
 
     get emptyErrorMessage(){
-        return $('.e4p6sj52=Campo obrigatório')
+        return $('.e4p6sj52*=Campo')
     }
     
     get forgottenPasswordLink(){
@@ -26,7 +30,7 @@ class LoginPage extends BasePage{
     }
 
     get wrongEmailErrorMessage(){
-        return $('.e5387b70=Este email não está cadastrado')
+        return $('.ReactModal__Content--after-open').$('.e5387b70*=Este')
     }
 
     open(){

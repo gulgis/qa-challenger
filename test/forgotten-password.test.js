@@ -31,12 +31,27 @@ describe('TU03 - Forgotten Password Test ', () => {
 
     it('should request a new password with empty email', ()=> {
 
-        browser.waitAndClick('.e1677wdp0=Enviar')
+        LoginPage.submitButtonSend.click()
+        LoginPage.emptyErrorMessage.waitForExist()
 
-        const emptyInfoLabel = LoginPage.emptyErrorMessage
-        emptyInfoLabel.waitForExist()
-        expect(emptyInfoLabel.getText()).to.contains('Campo obrigatório')
+        expect(LoginPage.emptyErrorMessage.getText()).to.contains('Campo obrigatório')
 
+    })
+
+    it('should request a new password with an invalid email', () => {
+        const wrongEmail = 'joe@mail.com'
+        const input = $('.ReactModal__Content--after-open').$('.e4p6sj51').$('.e4p6sj50')
+        
+        LoginPage.loginForm.waitForExist()
+        input.setValue(wrongEmail)
+        LoginPage.submitButtonSend.click()
+        LoginPage.wrongEmailErrorMessage.waitForExist()
+
+
+        expect(LoginPage.wrongEmailErrorMessage.getText()).to.contains(
+            'Este email não está cadastrado'
+        )
+        
     })
 
 
