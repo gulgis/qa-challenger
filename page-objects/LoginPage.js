@@ -17,20 +17,16 @@ class LoginPage extends BasePage{
         return $('button=Entrar')
     }
 
-    get submitButtonSend(){
-        return $('button=Enviar')
-    }
-
-    get emptyErrorMessage(){
-        return $('.e4p6sj52*=Campo')
+    get errorMessage(){
+        return $('.e4p6sj52')
     }
     
     get forgottenPasswordLink(){
         return $('.e1ozijpt0*=Esqueci')
     }
 
-    get wrongEmailErrorMessage(){
-        return $('.ReactModal__Content--after-open').$('.e5387b70*=Este')
+    get messageNotRegistered(){
+        return $('.e5387b70*=Este')
     }
 
     open(){
