@@ -8,14 +8,18 @@ describe('TU03 - Forgotten Password Test ', () => {
         ForgottenPasswordPage.open()
 
         expect(ForgottenPasswordPage.metaData.title).to.contains('Labor')
-        expect(ForgottenPasswordPage.metaData.url).to.equal('https://getlabor.com.br/')
+        expect(ForgottenPasswordPage.metaData.url).to.equal(
+            'https://getlabor.com.br/'
+        )
     })
 
     it('should click on signin button', () => {
         Navbar.signInButton.waitForExist()
         Navbar.signInButton.click()
 
-        expect(ForgottenPasswordPage.metaData.url).to.contains('entrar')
+        expect(ForgottenPasswordPage.metaData.url).to.contains(
+            'entrar'
+        )
     })
 
     it('should click on forgotten password link', () => {

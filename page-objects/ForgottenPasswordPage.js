@@ -40,8 +40,6 @@ class ForgottenPasswordPage extends BasePage{
         return this.form.$('.e4p6sj51').$('.e4p6sj50')
     }
 
-
-
     open(){
         super.open('https://getlabor.com.br')
     }
