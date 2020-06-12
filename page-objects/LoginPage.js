@@ -1,5 +1,4 @@
-import BasePage from './BasePage.js'
-import {By} from 'selenium-standalone'		
+import BasePage from './BasePage.js'	
 
 
 class LoginPage extends BasePage{
@@ -24,7 +23,7 @@ class LoginPage extends BasePage{
     }
     
     get forgottenPasswordLink(){
-        return $('.e1ozijpt0*=Esqueci')
+        return $('.css-gg4vpm > a:nth-child(2)')
     }
 
     get messageNotRegistered(){
@@ -39,9 +38,14 @@ class LoginPage extends BasePage{
         return $('#profile-button > md-icon:nth-child(1)')
     }
 
-    get currentUrl(){
-        return browser.getUrl()
+    get logoutButton(){
+        return $('.logout > a:nth-child(4) > span:nth-child(2)')
     }
+
+    get logoTitle(){
+        return $('h1')
+    }
+
 
     open(){
         super.open('https://app.getlabor.com.br/entrar')
@@ -52,6 +56,13 @@ class LoginPage extends BasePage{
         this.username.setValue(username)
         this.password.setValue(password)
         this.submitButton.click()
+    }
+
+    LogoutApplication(){
+        this.logoutButton.waitForExist()
+        this.logoutButton.click()
+        
+        
     }
 }
 
